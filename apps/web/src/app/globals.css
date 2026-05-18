@@ -1,0 +1,15 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  color-scheme: light dark;
+}
+
+body {
+  @apply bg-slate-100 text-slate-900 dark:bg-slate-950 dark:text-slate-100;
+}
+
+.glass {
+  @apply bg-white/20 dark:bg-slate-900/40 backdrop-blur-xl border border-white/30 dark:border-slate-700/60;
+}
