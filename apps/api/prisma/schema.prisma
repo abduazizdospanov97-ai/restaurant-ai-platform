@@ -13,12 +13,26 @@ enum Role {
   CASHIER
 }
 
+enum StudentStatus {
+  ACTIVE
+  INACTIVE
+}
+
 model User {
   id           String   @id @default(cuid())
   fullName     String
   email        String   @unique
   passwordHash String
-  role         Role
+  role         Role     @default(TEACHER)
   createdAt    DateTime @default(now())
   updatedAt    DateTime @updatedAt
+}
+
+model Student {
+  id        String        @id @default(cuid())
+  fullName  String
+  phone     String?
+  status    StudentStatus @default(ACTIVE)
+  createdAt DateTime      @default(now())
+  updatedAt DateTime      @updatedAt
 }
